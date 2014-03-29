@@ -62,3 +62,8 @@ C:\Users\Public\Documents\Visual Studio 2010\Projects\mobilization\mobilization\
 C:\Users\Public\Documents\Visual Studio 2010\Projects\mobilization\mobilization\obj\Debug\mobilization.dll
 C:\Users\Public\Documents\Visual Studio 2010\Projects\mobilization\mobilization\obj\Debug\mobilization.xml
 C:\Users\Public\Documents\Visual Studio 2010\Projects\mobilization\mobilization\obj\Debug\mobilization.pdb
+E:\Projects\Kutty\trunk\mobilization\mobilization\obj\Debug\mobilization.Resources.resources
+E:\Projects\Kutty\trunk\mobilization\mobilization\obj\Debug\mobilization.vbproj.GenerateResource.Cache
+E:\Projects\Kutty\trunk\mobilization\mobilization\obj\Debug\mobilization.dll
+E:\Projects\Kutty\trunk\mobilization\mobilization\obj\Debug\mobilization.xml
+E:\Projects\Kutty\trunk\mobilization\mobilization\obj\Debug\mobilization.pdb
