@@ -11,4 +11,14 @@ public partial class AdminLogin : System.Web.UI.Page
     {
 
     }
+    protected void btnLogin_Click(object sender, EventArgs e)
+    {
+        if (txtuser.Text.Trim() == "admin" && txtpass.Text.Trim() == "admin")
+            Response.Redirect("~/Admin.aspx");
+    }
+    protected void btnClear_Click(object sender, EventArgs e)
+    {
+        txtuser.Text = "";
+        txtpass.Text = "";
+    }
 }

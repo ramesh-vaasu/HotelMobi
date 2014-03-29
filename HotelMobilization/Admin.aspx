@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="Admin.aspx.cs" Inherits="Admin" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
-<style type="text/css">
+    <style type="text/css">
         .style5
         {
             width: 100%;
@@ -67,7 +67,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
-<p>
+    <p>
         Welcome to Admin Login</p>
     <table align="center" class="style5">
         <tr>
@@ -119,11 +119,15 @@
                 style="color: #000000; text-align: right; font-weight: bold;">
                 </td>
             <td class="style13">
-                <asp:TextBox ID="txtCategory" runat="server" Width="200px"></asp:TextBox>
+                <%--<asp:TextBox ID="txtCategory" runat="server" Width="200px"></asp:TextBox>--%>
+                <asp:DropDownList ID="ddlCategory" runat="server">
+                    <asp:ListItem Text="Indian" Value="Indian" Selected="True" />
+                    <asp:ListItem Text="Chineese" Value="Chineese" />
+                </asp:DropDownList>
             </td>
-            <td class="style14">
+            <%--<td class="style14">
                 <asp:Button ID="Button1" runat="server" Text="+" />
-            </td>
+            </td>--%>
         </tr>
         <tr>
             <td class="style11" 
@@ -161,9 +165,9 @@
             <td class="style20" 
                 
                 style="font-weight: bold; color: #000000; text-align: left; vertical-align: middle">
-                <asp:TextBox ID="txtTimeTaken" runat="server" Width="65px"></asp:TextBox>
+                <asp:TextBox ID="txtMin" runat="server" Width="65px"></asp:TextBox>
             &nbsp;Min
-                <asp:TextBox ID="TextBox8" runat="server" Width="65px"></asp:TextBox>
+                <asp:TextBox ID="txtsec" runat="server" Width="65px"></asp:TextBox>
 &nbsp;Sec</td>
             <td class="style21">
                 </td>
@@ -186,9 +190,9 @@
                 style="color: #000000; text-align: center; font-weight: bold;" 
                 align="center" colspan="4" height="35px">
                 &nbsp;
-                <asp:Button ID="cmdAdd" runat="server" Text="Add" />
+                <asp:Button ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click" />
                 &nbsp;&nbsp;&nbsp;
-                <asp:Button ID="cmdCancel" runat="server" Text="Cancel" />
+                <asp:Button ID="btnCancel" runat="server" Text="Cancel" />
             </td>
         </tr>
         <tr>

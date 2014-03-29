@@ -95,9 +95,9 @@
         </tr>
         <tr>
             <td align="center" colspan="3">
-                <asp:Button ID="btnLogin" runat="server" Text="Login" />
+                <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" />
 &nbsp;&nbsp;
-                <asp:Button ID="btnClear" runat="server" Text="Clear" />
+                <asp:Button ID="btnClear" runat="server" Text="Clear" OnClick="btnClear_Click"  />
 &nbsp;&nbsp;
                 <asp:Button ID="btnCancel" runat="server" Text="Cancel" />
             </td>
