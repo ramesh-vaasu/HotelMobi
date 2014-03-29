@@ -21,12 +21,6 @@ public partial class Admin : System.Web.UI.Page
     }
     protected void btnAdd_Click(object sender, EventArgs e)
     {
-        //conn = new SqlConnection();
-        //conn.ConnectionString = ConfigurationManager.ConnectionStrings["HotelMobiConnect"].ToString();
-        //conn.Open();
-        //cmd = new SqlCommand("Dishes_Insert", conn);
-        //cmd.CommandType = CommandType.StoredProcedure;
-        //cmd.Parameters.AddWithValue("@
         HotelMobiModel.HotelMobiEntities HotelMobiEntity = new HotelMobiModel.HotelMobiEntities();
         HotelMobiModel.Dish objDish = new HotelMobiModel.Dish();
         objDish.Category = ddlCategory.SelectedValue;
