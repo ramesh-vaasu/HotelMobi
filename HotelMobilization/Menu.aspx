@@ -165,7 +165,7 @@
                 align="center" colspan="4" height="35px">
                 <asp:Button ID="Submit" runat="server" Text="Submit" />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="UnchekAll" runat="server" Text="Unchek All" OnClick="cmd_UnchekAll" />
+                <asp:Button ID="UnchekAll" runat="server" Text="Unchek All" OnClick="UnCheckAll_Click" />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Button ID="Cancel" runat="server" Text="Cancel" />
             </td>

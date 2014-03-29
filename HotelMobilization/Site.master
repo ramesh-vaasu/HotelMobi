@@ -29,9 +29,7 @@
         <div class="header">
             <div>
                 <img alt="logo" class="header" longdesc="logo" 
-                    
-                    src="horizontal logo1.jpg"
-                    align="middle" ismap="ismap" /></div>
+                    src="Styles/horizontal%20logo1.jpg" align="middle" ismap="ismap" /></div>
             <div class="clear hideSkiplink">
                     <table cellpadding="0" cellspacing="0">
                     <tr><td class="style4">
@@ -40,15 +38,15 @@
                      
                         <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
                         <asp:MenuItem NavigateUrl="~/Menu.aspx" Text="Menu" Value="Menu"></asp:MenuItem>
-                        <asp:MenuItem NavigateUrl="~/My Order.aspx" Text="My Order" Value="My Order">
+                        <asp:MenuItem NavigateUrl="~/MyOrder.aspx" Text="My Order" Value="My Order">
                         </asp:MenuItem>
                         <asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/>
                     </Items></asp:Menu></td>
                     <td class="style3">
                     <p align="left" 
-                            style="color: #FFFFFF; width: 80px;" class="chef"><a href="/login.aspx" 
-                            style="color: #FFFFFF;">Chef</a> / <a href="/login.aspx" 
-                            style="color: #FFFFFF">Admin</a></p>
+                            style="color: #FFFFFF; width: 80px;" class="chef">
+                            <a href="ChefLogin.aspx" style="color: #FFFFFF;">Chef</a> / 
+                            <a href="AdminLogin.aspx" style="color: #FFFFFF">Admin</a></p>
                 </td></tr></table>
                 
             </div>
