@@ -11,4 +11,18 @@ public partial class ChefLogin : System.Web.UI.Page
     {
 
     }
+    protected void btnLogin_Click(object sender, EventArgs e)
+    {
+        if (txtuser.Text.Trim() == "chef" && txtpass.Text.Trim() == "chef")
+            Response.Redirect("~/MyOrder.aspx");
+    }
+    protected void btnClear_Click(object sender, EventArgs e)
+    {
+        txtuser.Text = "";
+        txtpass.Text = "";
+    }
+    protected void btnCancel_Click(object sender, EventArgs e)
+    {
+       
+    }
 }
