@@ -34,5 +34,8 @@ public partial class Admin : System.Web.UI.Page
         objDish.UpdatedAt = DateTime.Now;
         HotelMobiEntity.AddToDishes(objDish);
         HotelMobiEntity.SaveChanges();
+        //MessageBox.Show("Are you sure you want to insert a new dish ?");
+        //Response.Write("<script type=\"text/javascript\">alert('Are you sure you want to insert a new dish ?');</script>");
+        Response.Redirect("~/Menu.aspx");
     }
 }

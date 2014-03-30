@@ -80,6 +80,22 @@ namespace HotelMobiModel
             }
         }
         private ObjectSet<Dish> _Dishes;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<Order> Orders
+        {
+            get
+            {
+                if ((_Orders == null))
+                {
+                    _Orders = base.CreateObjectSet<Order>("Orders");
+                }
+                return _Orders;
+            }
+        }
+        private ObjectSet<Order> _Orders;
 
         #endregion
 
@@ -91,6 +107,14 @@ namespace HotelMobiModel
         public void AddToDishes(Dish dish)
         {
             base.AddObject("Dishes", dish);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the Orders EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToOrders(Order order)
+        {
+            base.AddObject("Orders", order);
         }
 
         #endregion
@@ -386,6 +410,189 @@ namespace HotelMobiModel
         private global::System.DateTime _UpdatedAt;
         partial void OnUpdatedAtChanging(global::System.DateTime value);
         partial void OnUpdatedAtChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="HotelMobiModel", Name="Order")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Order : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new Order object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="dishId">Initial value of the DishId property.</param>
+        /// <param name="placedAt">Initial value of the PlacedAt property.</param>
+        /// <param name="isServed">Initial value of the IsServed property.</param>
+        public static Order CreateOrder(global::System.Int32 id, global::System.Int32 dishId, global::System.DateTime placedAt, global::System.Boolean isServed)
+        {
+            Order order = new Order();
+            order.Id = id;
+            order.DishId = dishId;
+            order.PlacedAt = placedAt;
+            order.IsServed = isServed;
+            return order;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 DishId
+        {
+            get
+            {
+                return _DishId;
+            }
+            set
+            {
+                OnDishIdChanging(value);
+                ReportPropertyChanging("DishId");
+                _DishId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("DishId");
+                OnDishIdChanged();
+            }
+        }
+        private global::System.Int32 _DishId;
+        partial void OnDishIdChanging(global::System.Int32 value);
+        partial void OnDishIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime PlacedAt
+        {
+            get
+            {
+                return _PlacedAt;
+            }
+            set
+            {
+                OnPlacedAtChanging(value);
+                ReportPropertyChanging("PlacedAt");
+                _PlacedAt = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("PlacedAt");
+                OnPlacedAtChanged();
+            }
+        }
+        private global::System.DateTime _PlacedAt;
+        partial void OnPlacedAtChanging(global::System.DateTime value);
+        partial void OnPlacedAtChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ServedAt
+        {
+            get
+            {
+                return _ServedAt;
+            }
+            set
+            {
+                OnServedAtChanging(value);
+                ReportPropertyChanging("ServedAt");
+                _ServedAt = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("ServedAt");
+                OnServedAtChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ServedAt;
+        partial void OnServedAtChanging(Nullable<global::System.DateTime> value);
+        partial void OnServedAtChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean IsServed
+        {
+            get
+            {
+                return _IsServed;
+            }
+            set
+            {
+                OnIsServedChanging(value);
+                ReportPropertyChanging("IsServed");
+                _IsServed = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("IsServed");
+                OnIsServedChanged();
+            }
+        }
+        private global::System.Boolean _IsServed;
+        partial void OnIsServedChanging(global::System.Boolean value);
+        partial void OnIsServedChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> OrderId
+        {
+            get
+            {
+                return _OrderId;
+            }
+            set
+            {
+                OnOrderIdChanging(value);
+                ReportPropertyChanging("OrderId");
+                _OrderId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("OrderId");
+                OnOrderIdChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _OrderId;
+        partial void OnOrderIdChanging(Nullable<global::System.Int32> value);
+        partial void OnOrderIdChanged();
 
         #endregion
 

@@ -4,9 +4,10 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="HotelMobiModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="HotelMobiModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="HotelMobiModelStoreContainer">
           <EntitySet Name="Dishes" EntityType="HotelMobiModel.Store.Dishes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Orders" EntityType="HotelMobiModel.Store.Orders" store:Type="Tables" Schema="dbo" />
         </EntityContainer>
         <EntityType Name="Dishes">
           <Key>
@@ -23,13 +24,24 @@
           <Property Name="InsertedAt" Type="datetime" Nullable="false" />
           <Property Name="UpdatedAt" Type="datetime" Nullable="false" />
         </EntityType>
-      </Schema>
-    </edmx:StorageModels>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OrderId" Type="int" />
+          <Property Name="DishId" Type="int" Nullable="false" />
+          <Property Name="PlacedAt" Type="datetime" Nullable="false" />
+          <Property Name="ServedAt" Type="datetime" />
+          <Property Name="IsServed" Type="bit" Nullable="false" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="HotelMobiModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
         <EntityContainer Name="HotelMobiEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Dishes" EntityType="HotelMobiModel.Dish" />
+          <EntitySet Name="Orders" EntityType="HotelMobiModel.Order" />
         </EntityContainer>
         <EntityType Name="Dish">
           <Key>
@@ -45,6 +57,17 @@
           <Property Name="TimeTaken" Type="Int32" Nullable="false" />
           <Property Name="InsertedAt" Type="DateTime" Nullable="false" />
           <Property Name="UpdatedAt" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="DishId" Nullable="false" />
+          <Property Type="DateTime" Name="PlacedAt" Nullable="false" />
+          <Property Type="DateTime" Name="ServedAt" />
+          <Property Type="Boolean" Name="IsServed" Nullable="false" />
+          <Property Type="Int32" Name="OrderId" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -65,6 +88,18 @@
                 <ScalarProperty Name="TimeTaken" ColumnName="TimeTaken" />
                 <ScalarProperty Name="InsertedAt" ColumnName="InsertedAt" />
                 <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="HotelMobiModel.Order">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="IsServed" ColumnName="IsServed" />
+                <ScalarProperty Name="ServedAt" ColumnName="ServedAt" />
+                <ScalarProperty Name="PlacedAt" ColumnName="PlacedAt" />
+                <ScalarProperty Name="DishId" ColumnName="DishId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -90,6 +125,7 @@
     <Diagrams>
       <Diagram Name="HotelMobiModel">
         <EntityTypeShape EntityType="HotelMobiModel.Dish" Width="1.5" PointX="0.75" PointY="0.75" Height="2.9417936197916665" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelMobiModel.Order" Width="1.5" PointX="3.375" PointY="0.75" Height="1.9802864583333326" />
       </Diagram>
     </Diagrams>
   </Designer>

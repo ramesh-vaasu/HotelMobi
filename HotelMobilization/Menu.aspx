@@ -1,32 +1,49 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="Menu.aspx.cs" Inherits="Menu" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
-<style type="text/css">
-        .style14
-        {
-            width: 127px;
-        }
-        .style15
-        {
-            width: 127px;
-            font-weight: 700;
-        }
-        .style16
-        {
-            width: 114px;
-            font-weight: 700;
-        }
-        .style17
-        {
-            width: 219px;
-        }
-    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
-<h2>
+    <h2>
         Menu Page </h2>
     <br />
-   <table align="center" class="style5">
+    <div style="text-align:center;">
+    <div style="text-align:center; display:inline-block;">
+    <asp:GridView ID="gvItems" runat="server" AutoGenerateColumns="false">
+    <Columns>
+    <asp:TemplateField HeaderText="Select">
+    <ItemTemplate>
+    <asp:HiddenField ID="hfId" runat="server" Value = '<%# Eval("Id")%>' />
+    <asp:CheckBox ID="cbSelect" runat="server" EnableViewState="true"  />
+    </ItemTemplate>
+    </asp:TemplateField>
+    
+    <asp:TemplateField HeaderText="Item Name">
+    <ItemTemplate>
+    <asp:Label ID="lblName" Text='<%# Eval("Name") %>' runat="server" />
+    </ItemTemplate>
+    </asp:TemplateField>
+
+    <asp:TemplateField HeaderText="Price in Rupees">
+    <ItemTemplate>
+    <strong><asp:Label ID="lblPrice" Text='<%# Eval("Price") %>' runat="server" /></strong>
+    </ItemTemplate>
+    </asp:TemplateField>
+
+    <asp:TemplateField HeaderText="Time Taken in Secs">
+    <ItemTemplate>
+    <asp:Label ID="lblMins" Text='<%# Eval("TimeTaken") %>' runat="server" />
+    </ItemTemplate>
+    </asp:TemplateField>
+    </Columns>
+    </asp:GridView>
+        <br />
+    <asp:Button ID="btnPlaceOrder" runat="server" Text="Place Order" 
+            onclick="btnPlaceOrder_Click" />
+    &nbsp;&nbsp;
+        <asp:Button ID="btnUnCheckAll" runat="server" Text="UnCheckAll" OnClick="btnUnCheckAll_Click" />
+    </div>
+    </div>
+   <%--<table align="center" class="style5">
          <tr>
             <td class="style17" 
                 style="color: #000000; text-align: center; font-weight: bold;" 
@@ -180,6 +197,6 @@
         </tr>
         
         
-    </table>
+    </table>--%>
 </asp:Content>
 
