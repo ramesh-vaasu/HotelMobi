@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="Errors.aspx.cs" Inherits="Errors" %>
+﻿<%@ Page Title="Error" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="Errors.aspx.cs" Inherits="Errors" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
 </asp:Content>
